@@ -1,0 +1,28 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.loader {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.cat-info img {
+    width: 300px;
+    height: auto;
+}
+
+.cat-info {
+    margin-top: 20px;
+}
+/* SlimSelect personalizat */
+.slim-select .ss-main {
+    font-size: 16px;
+    padding: 10px;
+}
