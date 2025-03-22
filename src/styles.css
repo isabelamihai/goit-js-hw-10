@@ -18,11 +18,11 @@ body {
     height: auto;
 }
 
-.cat-info {
-    margin-top: 20px;
+.cat-info h2 {
+    color: #ff4500;
 }
 /* SlimSelect personalizat */
 .slim-select .ss-main {
     font-size: 16px;
-    padding: 10px;
+    padding:10px;
 }
