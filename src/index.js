@@ -39,12 +39,11 @@ const hideLoaderAndDisplayCatInfo = (catData) => {
 
 // Funcție pentru a trata eroarea cu Notiflix
 const handleError = (message) => {
-    // Utilizăm Notiflix pentru a afișa notificarea de eroare
     Notiflix.Notify.failure(`Eroare: ${message}`, {
-        position: 'right-bottom', // Poziția notificării
-        distance: '10px', // Distanța față de margini
-        fontSize: '16px', // Dimensiunea fontului
-        timeout: 5000, // Timpul de dispariție al notificării
+        position: 'right-bottom', // 
+        distance: '10px', // 
+        fontSize: '16px', // 
+        timeout: 5000, // 
     });
     
 };
