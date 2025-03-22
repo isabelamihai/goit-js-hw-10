@@ -21,7 +21,6 @@
     "axios": "^1.8.4",
     "css-loader": "^7.1.2",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.8",
     "slim-select": "^2.10.0",
     "spinkit": "^2.0.1",
     "start": "^5.1.0"

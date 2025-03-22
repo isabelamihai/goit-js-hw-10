@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Setează cheia API în antetul cererii
-axios.defaults.headers.common['x-api-key'] = 'live_PrslwJBIX95QwX5OVqvtdjX4W8IHHNeCPqppHKTyCpFBqHTwZvPU7qe2XC4IKDjy'; // Înlocuiește cu cheia ta reală
+axios.defaults.headers.common['x-api-key'] = 'live_PrslwJBIX95QwX5OVqvtdjX4W8IHHNeCPqppHKTyCpFBqHTwZvPU7qe2XC4IKDjy'; // Asigură-te că pui cheia corectă aici
 
 // Funcția care obține lista raselor de pisici
 export const fetchBreeds = async () => {
@@ -24,3 +24,4 @@ export const fetchCatByBreed = async (breedId) => {
     throw error;
   }
 };
+

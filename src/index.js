@@ -1,8 +1,9 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
-import SlimSelect from 'slim-select';
-import Notiflix from 'notiflix';
 
-// Funcție pentru a popula dropdown-ul cu opțiuni de rase
+// Variabilă pentru a stoca instanța SlimSelect
+let slimSelectInstance = null;
+
+// Funcție pentru a popula select-ul cu opțiuni de rase
 const populateBreedSelect = (breeds) => {
   const breedSelect = document.getElementById('breed-select');
   breeds.forEach(breed => {
@@ -10,11 +11,6 @@ const populateBreedSelect = (breeds) => {
     option.value = breed.id;
     option.textContent = breed.name;
     breedSelect.appendChild(option);
-  });
-
-  // Inițializarea SlimSelect
-  new SlimSelect({
-    select:'#breed-select',
   });
 };
 
@@ -29,6 +25,7 @@ const showLoader = () => {
 const hideLoaderAndDisplayCatInfo = (catData) => {
   document.querySelector('.loader').style.display = 'none';
   document.querySelector('.cat-info').style.display = 'block';
+
   const catImage = document.getElementById('cat-image');
   const catName = document.getElementById('cat-name');
   const catDescription = document.getElementById('cat-description');
@@ -44,7 +41,7 @@ const hideLoaderAndDisplayCatInfo = (catData) => {
 const handleError = (message) => {
   document.querySelector('.loader').style.display = 'none';
   document.querySelector('.error').style.display = 'block';
-  Notiflix.Notify.failure(message);
+  document.querySelector('.error').textContent = message;
 };
 
 // Inițializarea aplicației
