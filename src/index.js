@@ -14,7 +14,7 @@ const populateBreedSelect = (breeds) => {
 
   // Inițializarea SlimSelect
   new SlimSelect({
-    select: '#breed-select',
+    select:'#breed-select',
   });
 };
 
