@@ -1,24 +1,26 @@
 import axios from 'axios';
 
-// Setează cheia API globală pentru toate cererile
-axios.defaults.headers.common['x-api-key'] = 'live_PrslwJBIX95QwX5OVqvtdjX4W8IHHNeCPqppHKTyCpFBqHTwZvPU7qe2XC4IKDjy';
+// Setează cheia API în antetul cererii
+axios.defaults.headers.common['x-api-key'] = 'live_PrslwJBIX95QwX5OVqvtdjX4W8IHHNeCPqppHKTyCpFBqHTwZvPU7qe2XC4IKDjy'; // Înlocuiește cu cheia ta reală
 
-// Funcție pentru a obține rasele de pisici
+// Funcția care obține lista raselor de pisici
 export const fetchBreeds = async () => {
   try {
     const response = await axios.get('https://api.thecatapi.com/v1/breeds');
-    return response.data; // Returnează array-ul cu rase
+    return response.data; // Returnează datele despre rase
   } catch (error) {
-    throw new Error('Eroare la obținerea raselor: ' + error.message);
+    console.error('Eroare la încărcarea raselor:', error);
+    throw error;
   }
 };
 
-// Funcție pentru a obține informații despre o pisică pe baza ID-ului rasei
+// Funcția care obține informații despre o pisică pe baza rasei
 export const fetchCatByBreed = async (breedId) => {
   try {
     const response = await axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
-    return response.data; // Returnează informațiile despre pisică
+    return response.data; // Returnează datele despre pisică
   } catch (error) {
-    throw new Error('Eroare la obținerea informațiilor despre pisică: ' + error.message);
+    console.error('Eroare la încărcarea pisicii:', error);
+    throw error;
   }
 };
