@@ -1,5 +1,5 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
-
+import Notiflix from 'notiflix';
 // Variabilă pentru a stoca instanța SlimSelect
 let slimSelectInstance = null;
 
@@ -37,11 +37,16 @@ const hideLoaderAndDisplayCatInfo = (catData) => {
   catTemperament.textContent = `Temperament: ${catData[0].breeds[0].temperament}`;
 };
 
-// Funcție pentru a trata eroarea
+// Funcție pentru a trata eroarea cu Notiflix
 const handleError = (message) => {
-  document.querySelector('.loader').style.display = 'none';
-  document.querySelector('.error').style.display = 'block';
-  document.querySelector('.error').textContent = message;
+    // Utilizăm Notiflix pentru a afișa notificarea de eroare
+    Notiflix.Notify.failure(`Eroare: ${message}`, {
+        position: 'right-bottom', // Poziția notificării
+        distance: '10px', // Distanța față de margini
+        fontSize: '16px', // Dimensiunea fontului
+        timeout: 5000, // Timpul de dispariție al notificării
+    });
+    
 };
 
 // Inițializarea aplicației
