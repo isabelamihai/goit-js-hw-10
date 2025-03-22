@@ -1,7 +1,7 @@
 import { fetchBreeds, fetchCatByBreed } from './cat-api';
 import Notiflix from 'notiflix';
-// Variabilă pentru a stoca instanța SlimSelect
 let slimSelectInstance = null;
+
 
 // Funcție pentru a popula select-ul cu opțiuni de rase
 const populateBreedSelect = (breeds) => {
@@ -57,7 +57,7 @@ const init = async () => {
     const breeds = await fetchBreeds();
     populateBreedSelect(breeds);
 
-    // Adaugă event listener pentru selectarea unei rase
+    // event listener pentru selectarea unei rase
     document.getElementById('breed-select').addEventListener('change', async (event) => {
       const breedId = event.target.value;
       if (breedId) {
@@ -75,5 +75,4 @@ const init = async () => {
   }
 };
 
-// Rulează aplicația la încărcarea paginii
 window.onload = init;
