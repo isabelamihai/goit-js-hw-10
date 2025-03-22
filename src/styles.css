@@ -1,11 +1,12 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f9f9f9;
 }
 
 .loader {
     color: #ff4500;
-    font-weight: bold;
+    font-weight:bold;
 }
 
 .error {
@@ -15,14 +16,27 @@ body {
 
 .cat-info img {
     width: 300px;
-    height: auto;
+    height: 300px;
+    border-radius: 50%;
+    margin:0 auto;
+    border: 5px solid #ff4500;
+    transition: transform 0.5s;
+    cursor: pointer;
+    padding:5px;
+    margin:10px;
+}
+
+.cat-info img:hover {
+    transform: scale(1.1);
 }
 
 .cat-info h2 {
     color: #ff4500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /* SlimSelect personalizat */
 .slim-select .ss-main {
     font-size: 16px;
-    padding:10px;
+    padding: 10px;
+    border: 1px solid #ff4500;
 }
